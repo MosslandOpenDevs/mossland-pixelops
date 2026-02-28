@@ -1,0 +1,23 @@
+{
+  "name": "mossland-pixelops",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Pixel-art living operations map for Mossland ecosystem visualization",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MosslandOpenDevs/mossland-pixelops.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "echo 'TODO: pnpm --filter client dev & pnpm --filter server dev'",
+    "build": "echo 'TODO: pnpm -r build'",
+    "lint": "echo 'TODO: eslint .'",
+    "typecheck": "echo 'TODO: tsc --noEmit'",
+    "test": "echo 'TODO: vitest'"
+  }
+}
