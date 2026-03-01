@@ -1,41 +1,48 @@
 # Asset Attribution
 
-All assets used in Mossland PixelOps must be listed here with their license information.
+All assets used in Mossland PixelOps are listed here with license information.
 
-## Format
+## Integrated Assets
 
-```
-### Asset Name
-- **Source:** [URL]
-- **Author:** [name]
-- **License:** [license name + URL]
-- **Modifications:** [none / description of changes]
-```
-
-## Assets
-
-### Current: Programmatic Textures
-- **Source:** Generated at runtime in code
-- **Author:** Mossland PixelOps team
-- **License:** MIT (part of this project)
-- **Notes:** Placeholder pixel art generated via Canvas API. No external assets required.
-
-### Planned: MetroCity Characters
-- **Source:** https://jik-a-4.itch.io/metro-city-characters
+### MetroCity Free Top Down Character Pack
+- **Source:** https://jik-a-4.itch.io/metrocity-free-topdown-character-pack
 - **Author:** JIK-A-4
 - **License:** CC0 (Public Domain)
-- **Status:** Not yet integrated
+- **Usage:** Character sprites (char_0-5.png), used via pixel-agents project
 
-### Planned: MetroCity Environment
-- **Source:** https://jik-a-4.itch.io/metro-city-environment
-- **Author:** JIK-A-4
-- **License:** CC0 (Public Domain)
-- **Status:** Not yet integrated
+### pixel-agents (walls.png)
+- **Source:** https://github.com/pablodelucca/pixel-agents
+- **Author:** Pablo de Lucca
+- **License:** MIT
+- **Usage:** Wall auto-tile spritesheet (walls.png)
 
-### Planned: Ninja Adventure Asset Pack
-- **Source:** https://pixel-boy.itch.io/ninja-adventure-asset-pack
-- **Author:** Pixel-Boy & AAA
-- **License:** CC0 (Public Domain)
-- **Status:** Not yet integrated
+### Generative Agents (The Ville map)
+- **Source:** https://github.com/joonspk-research/generative_agents
+- **Author:** Joon Sung Park et al.
+- **License:** Apache-2.0
+- **Usage:** Tiled JSON map (the_ville.json) and tileset references
 
-See [ADR-001](../docs/decisions/ADR-001-asset-licensing.md) for the licensing policy.
+### LimeZu Tilesets (via Generative Agents)
+- **Source:** https://limezu.itch.io/moderninteriors
+- **Author:** LimeZu
+- **License:** Commercial (purchased separately, not redistributed)
+- **Usage:** Room_Builder_32x32.png, interiors_pt1-5.png (must be downloaded separately)
+
+## Paid Assets (Not Included in Repository)
+
+Download separately from `assets/downloads.txt`:
+
+### Office Interior Tileset (16x16)
+- **Source:** https://donarg.itch.io/officetileset
+- **Author:** Donarg
+- **License:** Commercial (per itch.io purchase terms)
+
+### Modern Interiors - RPG Tileset [16x16]
+- **Source:** https://limezu.itch.io/moderninteriors
+- **Author:** LimeZu
+- **License:** Commercial (per itch.io purchase terms)
+
+### Modern Office - Revamped [16x16]
+- **Source:** https://limezu.itch.io/modernoffice
+- **Author:** LimeZu
+- **License:** Commercial (per itch.io purchase terms)
