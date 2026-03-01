@@ -39,3 +39,15 @@ coverage/
 
 # Phaser
 .phaser/
+
+# Art assets — licensed separately (see assets/downloads.txt)
+assets/free/
+assets/paid/
+apps/client/public/assets/characters/
+apps/client/public/assets/characters-modern/
+apps/client/public/assets/ga/
+apps/client/public/assets/office/
+apps/client/public/assets/tilesets/
+apps/client/public/assets/maps/
+apps/client/public/assets/walls.png
+*.tsbuildinfo

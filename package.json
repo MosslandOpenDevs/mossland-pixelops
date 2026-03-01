@@ -14,10 +14,10 @@
   },
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "dev": "echo 'TODO: pnpm --filter client dev & pnpm --filter server dev'",
-    "build": "echo 'TODO: pnpm -r build'",
-    "lint": "echo 'TODO: eslint .'",
-    "typecheck": "echo 'TODO: tsc --noEmit'",
+    "dev": "pnpm --filter @pixelops/client dev",
+    "build": "pnpm -r build",
+    "lint": "eslint .",
+    "typecheck": "pnpm -r typecheck",
     "test": "echo 'TODO: vitest'"
   }
 }
