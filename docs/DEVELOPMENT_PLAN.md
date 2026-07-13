@@ -9,43 +9,69 @@ Each phase delivers a testable increment.
 
 ---
 
-## Phase 0 — Foundation (Weeks 1–2)
+## Current Status
+
+> Snapshot as of the initial scaffold (Feb–Mar 2026). **Phase 0 is nearly
+> complete and Phase 1 is complete; nothing beyond Phase 1 has started.** The
+> app currently runs on a **mock event generator only** — no server, no
+> adapters, no live data.
+
+| Phase | State | Notes |
+|-------|-------|-------|
+| **0 — Foundation** | 🟡 Mostly done | Missing: CI pipeline, Prettier, Husky. `apps/server` was **not** scaffolded. |
+| **1 — Core Engine** | ✅ Done | Mock events drive agents & buildings; click → detail panel works. |
+| **2 — Adapters & Ingestion** | 🔜 Not started | No `packages/adapters`, no `apps/server`. |
+| **3 — Interaction & Filters** | 🔜 Not started | No modes/filters/provenance timeline yet. |
+| **4 — Replay & Performance** | 🔜 Not started | |
+| **5 — Extended Adapters & Assets** | 🔜 Not started | |
+| **6 — Launch Readiness** | 🔜 Not started | Not deployed. |
+
+**Bonus (beyond the original Phase 0–1 scope):** a **Tiled + image map system
+with runtime map switching** was built (The Ville + two office levels), which the
+plan below did not originally call for.
+
+For how this relates to the live sibling `pixel-agent-lab`, see
+[RELATED_PROJECTS.md](RELATED_PROJECTS.md).
+
+---
+
+## Phase 0 — Foundation (Weeks 1–2) — 🟡 Mostly done
 
 **Goal:** Runnable scaffold with an empty pixel world.
 
-| Task | Details |
-|------|---------|
-| Monorepo scaffolding | pnpm workspaces: `apps/client`, `apps/server`, `packages/*` |
-| Phaser + React integration | Vite template, Phaser 3 game embedded in React shell |
-| TypeScript strict mode | Shared `tsconfig.base.json`, per-package extends |
-| CI pipeline | GitHub Actions: lint → type-check → test → build |
-| Empty world render | Load a placeholder tilemap, camera controls, 1 test sprite |
-| Event schema (v0) | `packages/events`: `PixelOpsEvent` type + validation (Zod) |
-| Dev tooling | ESLint flat config, Prettier, Husky pre-commit |
+| Task | Details | Status |
+|------|---------|--------|
+| Monorepo scaffolding | pnpm workspaces: `apps/client`, `apps/server`, `packages/*` | 🟡 `apps/client` + `packages/*` done; `apps/server` **not** scaffolded |
+| Phaser + React integration | Vite template, Phaser 3 game embedded in React shell | ✅ |
+| TypeScript strict mode | Shared `tsconfig.base.json`, per-package extends | ✅ (`strict` + `noUncheckedIndexedAccess`) |
+| CI pipeline | GitHub Actions: lint → type-check → test → build | ❌ No `.github/workflows` yet |
+| Empty world render | Load a placeholder tilemap, camera controls, 1 test sprite | ✅ Exceeded — full reference maps + many agents |
+| Event schema (v0) | `packages/events`: `PixelOpsEvent` type + validation (Zod) | ✅ |
+| Dev tooling | ESLint flat config, Prettier, Husky pre-commit | 🟡 ESLint ✅; Prettier ❌; Husky ❌ |
 
-**Exit criteria:** `pnpm dev` opens a browser with a scrollable pixel map and one animated sprite.
+**Exit criteria:** `pnpm dev` opens a browser with a scrollable pixel map and one animated sprite. — ✅ **Met** (exceeded: multiple animated agents).
 
 ---
 
-## Phase 1 — Core Engine (Weeks 3–5)
+## Phase 1 — Core Engine (Weeks 3–5) — ✅ Done
 
 **Goal:** Deterministic event → state → render pipeline.
 
-| Task | Details |
-|------|---------|
-| World model package | `packages/world-model`: Entity types (`Agent`, `Building`, `Pipeline`, `Proposal`, `Signal`, `Artifact`) |
-| Event reducer | Pure function: `(state, event) → state`. Fully deterministic. |
-| Agent renderer | Spawn agents on map, idle/walk/action animations driven by state |
-| Building renderer | District buildings with state indicators (idle / active / alert) |
-| Side panel (React) | Click entity → panel shows: name, status, last N events, provenance links |
-| Event bus | In-memory pub/sub; adapters publish, renderer subscribes |
-| Debug overlay | FPS counter, event rate, entity count (toggle with hotkey) |
+| Task | Details | Status |
+|------|---------|--------|
+| World model package | `packages/world-model`: Entity types (`Agent`, `Building`, `Pipeline`, `Proposal`, `Signal`, `Artifact`) | 🟡 `Agent` + `Building` modeled; the rest exist only as event `EntityKind`s |
+| Event reducer | Pure function: `(state, event) → state`. Fully deterministic. | ✅ |
+| Agent renderer | Spawn agents on map, idle/walk/action animations driven by state | ✅ |
+| Building renderer | District buildings with state indicators (idle / active / alert) | ✅ (`BuildingSprite`) |
+| Side panel (React) | Click entity → panel shows: name, status, last N events, provenance links | ✅ |
+| Event bus | In-memory pub/sub; adapters publish, renderer subscribes | ✅ (mock publishes today; adapters 🔜) |
+| Debug overlay | FPS counter, event rate, entity count (toggle with hotkey) | ✅ |
 
-**Exit criteria:** Feed mock events → agents move and buildings animate → click shows details panel with event history.
+**Exit criteria:** Feed mock events → agents move and buildings animate → click shows details panel with event history. — ✅ **Met.**
 
 ---
 
-## Phase 2 — Adapters & Ingestion (Weeks 6–8)
+## Phase 2 — Adapters & Ingestion (Weeks 6–8) — 🔜 Not started
 
 **Goal:** Live data flows from GitHub and Agentic Orchestrator into the pixel world.
 
@@ -63,7 +89,7 @@ Each phase delivers a testable increment.
 
 ---
 
-## Phase 3 — Interaction & Filters (Weeks 9–10)
+## Phase 3 — Interaction & Filters (Weeks 9–10) — 🔜 Not started
 
 **Goal:** The map becomes navigable and filterable.
 
@@ -81,7 +107,7 @@ Each phase delivers a testable increment.
 
 ---
 
-## Phase 4 — Replay & Performance (Weeks 11–12)
+## Phase 4 — Replay & Performance (Weeks 11–12) — 🔜 Not started
 
 **Goal:** Time-travel replay and production-grade performance.
 
@@ -99,7 +125,7 @@ Each phase delivers a testable increment.
 
 ---
 
-## Phase 5 — Extended Adapters & Assets (Weeks 13–14)
+## Phase 5 — Extended Adapters & Assets (Weeks 13–14) — 🔜 Not started
 
 **Goal:** Full data coverage and production-ready assets.
 
@@ -116,7 +142,7 @@ Each phase delivers a testable increment.
 
 ---
 
-## Phase 6 — Launch Readiness (Weeks 15–16)
+## Phase 6 — Launch Readiness (Weeks 15–16) — 🔜 Not started
 
 **Goal:** Deploy, document, and announce.
 
@@ -135,15 +161,15 @@ Each phase delivers a testable increment.
 
 ## Milestone Summary
 
-| Milestone | Phase | Target | Key Deliverable |
-|-----------|-------|--------|-----------------|
-| M0: Scaffold | 0 | Week 2 | Empty world renders in browser |
-| M1: Engine | 1 | Week 5 | Mock events drive agent animations |
-| M2: Live Data | 2 | Week 8 | GitHub + AO events flow in real time |
-| M3: Interactive | 3 | Week 10 | Filters, provenance links, GOV mode |
-| M4: Replay | 4 | Week 12 | Time-travel replay at 60 fps |
-| M5: Full Coverage | 5 | Week 14 | All adapters + license-clean assets |
-| M6: Launch | 6 | Week 16 | Public deployment |
+| Milestone | Phase | Target | Key Deliverable | Status |
+|-----------|-------|--------|-----------------|--------|
+| M0: Scaffold | 0 | Week 2 | Empty world renders in browser | 🟡 Mostly (CI/Prettier/Husky pending) |
+| M1: Engine | 1 | Week 5 | Mock events drive agent animations | ✅ Done |
+| M2: Live Data | 2 | Week 8 | GitHub + AO events flow in real time | 🔜 Not started |
+| M3: Interactive | 3 | Week 10 | Filters, provenance links, GOV mode | 🔜 Not started |
+| M4: Replay | 4 | Week 12 | Time-travel replay at 60 fps | 🔜 Not started |
+| M5: Full Coverage | 5 | Week 14 | All adapters + license-clean assets | 🔜 Not started |
+| M6: Launch | 6 | Week 16 | Public deployment | 🔜 Not started |
 
 ---
 
