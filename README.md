@@ -1,12 +1,15 @@
 # Mossland PixelOps
 
+<!-- opendevs-badges:start -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-64748b?style=flat)](LICENSE)
+<!-- opendevs-badges:end -->
+
 A pixel-art **living operations map** that visualizes Mossland's services, agents, and governance in real time.
 
 Instead of charts-first dashboards, PixelOps renders a small 2D world where agents appear as characters and activity appears as motion, icons, and timelines.
 
-![Status](https://img.shields.io/badge/status-pre--alpha-orange)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Data](https://img.shields.io/badge/data-mock%20only-lightgrey)
+![Status](https://img.shields.io/badge/status-pre--alpha-orange?style=flat)
+![Data](https://img.shields.io/badge/data-mock%20only-lightgrey?style=flat)
 
 > **Looking for the live Mossland monitor?**
 > A sibling project, [`pixel-agent-lab`](https://github.com/MosslandOpenDevs/pixel-agent-lab), already ships a production governance dashboard at **[monitor.moss.land](https://monitor.moss.land)** using **live** service data. PixelOps is a separate, earlier-stage re-architecture of the same idea. See **[Related Projects](#related-projects)** for how the two fit together.
